@@ -4,7 +4,6 @@ def solution(numbers, hand):
     1,4,7 왼쪽 엄지
     3, 6, 9 오른쪽 엄지
     2, 5, 8, 0은 두 엄지손가락의 위치에서 가장 가까운 손 / 같은 경우 hand에 따라
-dddddddddddddddddd이것도 체크가 됩니까아아아아어ㅏㅓㅁㅇ리ㅏㅓ카ㅣㅌ퍼ㅡ,ㄹㅇ무프ㅏㅣㅌㅋ추
     '''
     answer = []
     one = [0,0]
