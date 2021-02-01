@@ -29,7 +29,6 @@ def solution(board, moves):
                     answer +=2
                 board[line][i-1] = 0
                 break
-    print("stack = ", stack)
     return answer
 print(solution([
         [0,0,0,0,0], # board[0]
