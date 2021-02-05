@@ -150,7 +150,13 @@ DROP USER IF EXISTS [username@["주소"]]
     ``` sql
     SELECT [집계함수(속성)] FROM [테이블 명] GROUP BY [묶으려는 속성]
     - "테이블 명"의 테이블에서 "묶으려는 속성"의 값이 같은 속성들을 "집계함수"로 연산하여 묶는다.
-
+    ---------------------------------------------------------------
+    SELECT custid, COUNT(*) AS 도서수량, SUM(saleprice) AS 총액 
+    FROM Orders
+    GROUP BY custid;
+    # Orders 테이블로부터 custid, COUNT(*), SUM(saleprice)를 찾는데,
+    custid로 묶인 것으로부터 추출하라
+    
 
     ```
 ### DCL : CRGR (COMMIT / ROLLBACK / GRANT / REVOKE)
