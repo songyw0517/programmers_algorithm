@@ -88,11 +88,8 @@ DROP USER IF EXISTS [username@["주소"]]
     - "테이블 명"의 테이블에서 "찾는 속성"의 속성을 찾음
 
     -------------------------------------------------
-    SELECT bookname, price
-    FROM Book
 
-    SELECT *
-    FROM Book
+
     ```
 
     ``` sql
@@ -114,21 +111,7 @@ DROP USER IF EXISTS [username@["주소"]]
     복합조건 : AND, OR, NOT              EX) (price<20000) AND (bookname LIKE '축국의 역사')
 
     -----------------------------------------------------------------------------------------
-    SELECT *
-    FROM Book
-    WHERE price < 20000
-
-    SELECT *
-    FROM BooK
-    WHERE price BETWEEN 10000 AND 20000
-
-    SELECT *
-    FROM Book
-    WHERE price>=10000 AND price <=20000
-
-    SELECT *
-    FROM Book
-    WHERE 
+    
     ```
     ``` sql
     SELECT [찾는 속성] FROM [테이블 명] ORDER BY [정렬 속성 | DESC / ASC, 정렬 속성2 | DESC / ASC ...]
@@ -150,15 +133,19 @@ DROP USER IF EXISTS [username@["주소"]]
     ``` sql
     SELECT [집계함수(속성)] FROM [테이블 명] GROUP BY [묶으려는 속성]
     - "테이블 명"의 테이블에서 "묶으려는 속성"의 값이 같은 속성들을 "집계함수"로 연산하여 묶는다.
-    ---------------------------------------------------------------
-    SELECT custid, COUNT(*) AS 도서수량, SUM(saleprice) AS 총액 
-    FROM Orders
-    GROUP BY custid;
-    # Orders 테이블로부터 custid, COUNT(*), SUM(saleprice)를 찾는데,
-    custid로 묶인 것으로부터 추출하라
     
-
+    SELECT [집계함수(속성)] FROM [테이블 명] GROUP BY [묶으려는 속성] HAVING [그룹 조건]
+    - "테이블 명"의 테이블에서 "묶으려는 속성"의 값이 같은 속성들을 "집계함수"로 연산하여 묶는데, 그룹 조건을 맞춘 것만 출력한다.
     ```
+    ``` sql
+    동등 조인 ('equi join')
+    SELECT * FROM [테이블1], [테이블2][,테이블3 ...] WHERE [테이블1.ID] = [테이블2.ID]  
+    # 이때의 ID는 서로 같은것을 칭하는 ID를 의미
+    
+    외부 조인('outer join')
+    ```
+
+
 ### DCL : CRGR (COMMIT / ROLLBACK / GRANT / REVOKE)
 
 # 시작할때 참고
