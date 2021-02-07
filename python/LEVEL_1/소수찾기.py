@@ -15,7 +15,7 @@ def solution(n):
     
     for i in range(2, int(n**0.5)+1): 
         if prime_list[i] == True:
-        for j in range(i+i, n+1, i):
-            prime_list[j]=False 
+            for j in range(i+i, n+1, i):
+                prime_list[j]=False 
     return (len([i for i in range(2, n+1) if prime_list[i]==True]))
 print(solution(5))
