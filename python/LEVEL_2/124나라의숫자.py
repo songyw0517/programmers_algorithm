@@ -7,6 +7,6 @@ def solution(n):
         i = n%3
         answer = str(temp[i]) + answer
         n= int(n/3)
-    return str(answer)
+    return answer
 
 print(solution(6))

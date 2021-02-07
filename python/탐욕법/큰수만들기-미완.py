@@ -4,4 +4,8 @@ def solution(number, k):
     for i in range(k):
         number.pop(number.index(min(number)))
     return number
+
+
+
+
 print(solution("4177252841",4))
