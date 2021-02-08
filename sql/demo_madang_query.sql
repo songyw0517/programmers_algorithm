@@ -1,3 +1,4 @@
+use madang;
 SELECT * 
 FROM Book;
 
@@ -126,10 +127,6 @@ WHERE Customer.custid = Orders.custid
 # 가격이 20000원인 도서를 주문한 고객의 이름과 도서의 이름을 구하시오
 
 ##########################################
-SELECT Customer.name, saleprice
-FROM Customer LEFT OUTER JOIN Orders
-			ON Customer.custid = Orders.custid;
-# VS
 SELECT Customer.name, saleprice
 FROM Customer LEFT OUTER JOIN Orders
 			ON Customer.custid = Orders.custid;
