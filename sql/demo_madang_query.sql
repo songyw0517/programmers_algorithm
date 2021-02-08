@@ -132,6 +132,31 @@ FROM Customer LEFT OUTER JOIN Orders
 			ON Customer.custid = Orders.custid;
 
 ###########################################
+/*부속질의*/
+SELECT bookname FROM Book WHERE price = (SELECT MAX(price) FROM Book);
+
+SELECT name FROM Customer WHERE custid IN (SELECT custid FROM Orders); # custid가 orders에 들어있는 name출력
+
+#########################################
+/*UNION 연산자*/
+SELECT name FROM Customer WHERE address LIKE '대한민국%'
+UNION
+SELECT name FROM Customer WHERE custid IN (SELECT custid FROM Orders);
+# address가 대한민국%인 customer의 이름과 
+# custid가 orders에 있는 customer의 이름을 출력하라
+
+# UNION ALL 연산은 중복된 것까지 모두 출력함
+
+#############################################
+/*Exists 존재하는지?*/
+SELECT name, address 
+FROM Customer cs 
+WHERE EXISTS(
+	SELECT * 
+    FROM Orders od 
+    WHERE cs.custid=od.custid)
+
+
 
 SELECT * FROM Customer;
 SELECT * FROM Orders;
