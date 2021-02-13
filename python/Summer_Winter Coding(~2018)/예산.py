@@ -5,7 +5,6 @@ def solution(d, budget):
         budget -= Min
         if budget>=0:
             answer+=1
-            print(Min)
             d.remove(Min)
         else:
             break
