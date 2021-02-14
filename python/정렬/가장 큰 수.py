@@ -1,9 +1,18 @@
 def solution(numbers):
-    for i, value in enumerate(numbers):
-        for j in range(10,0,-1):
-            
-            print(j)
-print(solution([1,2,3,4,5]))
+    numberlist = []
+    for i in numbers:
+        numberlist.append([str(i)*5, i])
+    numberlist.sort(reverse=True, key=lambda x:x[0])
+    answer = [i[1] for i in numberlist]
+    
+    answer = ''.join(list(map(str,answer)))
+
+    if int(answer) == 0:
+        return '0'
+    else:
+        return answer
+    
+print(solution([0,0,0,0,0]))
 
 '''
 from itertools import permutations
