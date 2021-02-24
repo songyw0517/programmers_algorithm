@@ -6,13 +6,15 @@ def solution(citations):
     # 나머지 논문이 h 이하인데
     # 처음에 6이 h가 되고, len(cation[:i+1])이 h 이상 사용된 논문의 갯수이고
     # 나머지 갯수는 len(cation)-i-1이 h 이하 사용된 논문의 갯수이다.
-    for i in range(len(citations)):
+    n = len(citations)
+    for i in range(n):
         h= citations[i]
-        if len(citations[:i+1]) > citations: # 이게 어긋날때 브레이크
+        if i+1 >= h:
+            # i+1 : 현재 갯수
             break
 
-    return citations[i]
-print(solution([3, 0, 6, 1, 5]))
+    return i+1
+print(solution([3,0,6,1,5]))
 
 '''
 def solution(citations):
