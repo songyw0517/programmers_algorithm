@@ -19,7 +19,6 @@ def solution(board):
             j=1
             i+=1
             
-
     return answer**2
 print(
     solution([
