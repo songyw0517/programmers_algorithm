@@ -1,15 +1,18 @@
 def solution(s):
+    temp = []
+    if len(s) == 1:
+        return len(s)
     for i in range(1, int(len(s)/2)+1):
         # i개 만큼 자름
         pre_word = s[0:i]
-        print("첫 단어 : ", pre_word)
+        #print("첫 단어 : ", pre_word)
         s_index=i
         l_index=i*2
         count=0
         new_str = ""
         for j in range(1, int(len(s)/i)):
             word = s[s_index:l_index] 
-            print("현재 단어 : ", word)
+            #print("현재 단어 : ", word)
             if pre_word == word:
                 count+=1
             else: # 다른 경우
@@ -23,17 +26,16 @@ def solution(s):
             l_index=l_index+i
         if s_index < len(s): # 전체 끝까지 안갔을경우
             word = s[s_index:]
-            print("끝까지 안감",word)
+            #print("끝까지 안감",word)
             new_str += word
         
         if count==0:
-            print("check = ", pre_word)
+            #print("check = ", pre_word)
             new_str += pre_word
         else:
             new_str += (str(count+1) + pre_word)
-        
-        print('s_index = ', s_index)
-        print("new str = ", new_str)
-    answer = 0
-    return answer
-print(solution("aabbaccc"))
+        temp.append(new_str)
+        #print('s_index = ', s_index)
+        #print("new str = ", new_str)
+    return min(map(len, temp))
+print(solution("a"))
